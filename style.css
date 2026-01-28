@@ -204,3 +204,79 @@ padding:40px 20px;
 }
 
 }
+/* ART PAGE */
+
+.art-page {
+background:#0b0b0b;
+color:#eee;
+font-family:Inter,sans-serif;
+}
+
+.art-header {
+padding:80px 10vw 40px;
+}
+
+.art-header h1 {
+font-family:"Playfair Display",serif;
+font-size:64px;
+margin-bottom:10px;
+}
+
+.art-header p {
+opacity:.6;
+margin-bottom:20px;
+}
+
+.back {
+color:#ff3b3b;
+text-decoration:none;
+}
+
+.chaos-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px 8vw 100px;
+align-items:start;
+}
+
+.chaos-grid img {
+width:100%;
+border-radius:4px;
+transition:.4s;
+filter:grayscale(20%);
+}
+
+.chaos-grid img:hover {
+transform:scale(1.03);
+filter:none;
+}
+
+.red-box {
+background:#ff2d2d;
+height:240px;
+border-radius:4px;
+opacity:.9;
+}
+
+.red-box.small {
+height:120px;
+}
+
+.red-box.tall {
+height:360px;
+}
+
+.art-footer {
+text-align:center;
+padding-bottom:80px;
+opacity:.4;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+.art-header h1{
+font-size:40px;
+}
+}
