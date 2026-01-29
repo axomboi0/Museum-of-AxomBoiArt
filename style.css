@@ -420,8 +420,9 @@ background-size:80px 80px;
 /* hero typography */
 
 .hero h1{
-font-family:Archivo Black;
-letter-spacing:.04em;
+font-family:"Cormorant Garamond";
+letter-spacing:.02em;
+font-weight:700;
 }
 
 .subtitle{
