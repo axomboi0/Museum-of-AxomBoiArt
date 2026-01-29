@@ -225,3 +225,65 @@ nav{justify-content:center}
 .hero::after,
 .hero::before{display:none}
 }
+/* ===============================
+   HARD IMAGE RESET (ABOUT + ART)
+================================ */
+
+/* generic images */
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* ABOUT PAGE FIX */
+
+.about img,
+.about-text img{
+max-width:720px;
+margin:40px auto;
+border-radius:6px;
+}
+
+/* ART PAGE FIX */
+
+.editorial-grid{
+max-width:1200px;
+margin:0 auto;
+}
+
+.editorial-grid img{
+grid-column:span 4 !important;
+max-width:100%;
+height:auto;
+object-fit:contain;
+}
+
+/* mobile scaling */
+
+@media(max-width:900px){
+
+.about img,
+.about-text img{
+max-width:100%;
+margin:24px auto;
+}
+
+.editorial-grid img{
+grid-column:span 6 !important;
+}
+
+}
+
+/* stop background FX from touching layout */
+
+body::before,
+body::after{
+pointer-events:none;
+}
+
+/* remove planet artifacts completely */
+
+.home .block::after{
+display:none !important;
+}
