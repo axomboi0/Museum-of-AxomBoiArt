@@ -287,3 +287,85 @@ pointer-events:none;
 .home .block::after{
 display:none !important;
 }
+/* ===============================
+   ABOUT PAGE IMAGE FIX
+=============================== */
+
+.about-images{
+max-width:900px;
+margin:60px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+padding:0 6%;
+}
+
+.about-images img{
+width:100%;
+height:auto;
+object-fit:contain;
+border-radius:6px;
+}
+
+/* stack on mobile */
+
+@media(max-width:900px){
+.about-images{
+grid-template-columns:1fr;
+margin:40px auto;
+}
+}
+
+/* ===============================
+   ART PAGE IMAGE FIX
+=============================== */
+
+.editorial-grid{
+max-width:1100px;
+margin:0 auto;
+padding:60px 6%;
+}
+
+.editorial-grid img{
+width:100%;
+height:auto;
+object-fit:contain;
+grid-column:span 4;
+border-radius:6px;
+}
+
+/* mobile art */
+
+@media(max-width:900px){
+.editorial-grid img{
+grid-column:span 6;
+}
+}
+
+/* ===============================
+   GLOBAL SAFETY
+=============================== */
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* kill planets forever */
+
+.home .block::after{
+display:none !important;
+}
+
+.hero span{
+mix-blend-mode:normal;
+filter:none;
+text-shadow:0 0 8px rgba(0,0,0,.6);
+}
+/* IMPORTANT PARAGRAPHS */
+
+.important{
+color:var(--blood);
+font-style:italic;
+text-shadow:0 0 6px rgba(139,0,0,.4);
+}
