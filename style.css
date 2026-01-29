@@ -7,20 +7,54 @@
 --void:#030303;
 }
 
-
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* BODY */
+/* BASE */
 body{
 font-family:Inter,sans-serif;
 color:#e6e6e6;
 line-height:1.7;
 overflow-x:hidden;
-background:var(--void);
+background:#030303;
 }
 
-/* GRAIN */
+/* ===============================
+   CHAOS BACKGROUND (GLOBAL)
+=============================== */
+
+html::before{
+content:"";
+position:fixed;
+inset:0;
+z-index:1;
+pointer-events:none;
+
+background:
+
+/* grid */
+linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+
+/* stars */
+radial-gradient(#ffffff 1.5px, transparent 3px),
+radial-gradient(#5a0000 1.5px, transparent 3px),
+
+/* scribbles + orbits + planets */
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1800' height='1000'><path d='M0 200 C400 40 700 360 1100 200 S1800 260 2200 420' stroke='%23555555' stroke-width='2' fill='none'/><path d='M0 650 Q600 380 1200 650' stroke='%235a0000' stroke-width='2' fill='none'/><circle cx='420' cy='340' r='180' stroke='%23444444' stroke-width='2' fill='none'/><circle cx='1050' cy='480' r='240' stroke='%23444444' stroke-width='2' fill='none'/><circle cx='1300' cy='200' r='90' stroke='%23444444' stroke-width='2' fill='none'/><circle cx='420' cy='340' r='6' fill='%235a0000'/><circle cx='1050' cy='480' r='6' fill='%233366ff'/><circle cx='1300' cy='200' r='5' fill='%23aaaaaa'/></svg>");
+
+background-size:
+80px 80px,
+80px 80px,
+140px 140px,
+220px 220px,
+100% 100%;
+
+opacity:.85;
+}
+
+/* grain */
+
 body::after{
 content:"";
 position:fixed;
@@ -28,71 +62,26 @@ inset:0;
 background:url("https://grainy-gradients.vercel.app/noise.svg");
 opacity:.05;
 pointer-events:none;
-z-index:0;
-}
-
-/* CONSTELLATIONS + STARS */
-
-body{
-font-family:Inter,sans-serif;
-color:#e6e6e6;
-line-height:1.7;
-overflow-x:hidden;
-background:
-linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
-#030303;
-background-size:80px 80px,80px 80px,auto;
-}
-
-/* FUN SCRIBBLE + ORBITS + STARS */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-z-index:0;
-
-background-image:
-
-/* white stars */
-radial-gradient(#ffffff 1.5px, transparent 3px),
-
-/* red stars */
-radial-gradient(#5a0000 1.5px, transparent 3px),
-
-/* solar orbits */
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'><circle cx='300' cy='300' r='160' stroke='%23333333' stroke-width='2' fill='none'/><circle cx='900' cy='450' r='220' stroke='%23333333' stroke-width='2' fill='none'/><circle cx='1200' cy='200' r='90' stroke='%23333333' stroke-width='2' fill='none'/><path d='M0 200 C400 50 700 350 1100 200 S1600 260 2000 400' stroke='%23555555' stroke-width='2' fill='none'/><path d='M0 650 Q600 400 1200 650' stroke='%235a0000' stroke-width='2' fill='none'/><circle cx='300' cy='300' r='6' fill='%235a0000'/><circle cx='900' cy='450' r='6' fill='%233366ff'/><circle cx='1200' cy='200' r='5' fill='%23aaaaaa'/></svg>");
-
-background-size:
-120px 120px,
-200px 200px,
-100% 100%;
-
-opacity:.7;
-}
-
-
-
-/* KEEP CONTENT ABOVE FX */
-header,.hero,.block,.preview,.editorial-grid,footer{
-position:relative;
 z-index:2;
 }
 
-/* IMAGES ALWAYS ON TOP */
-img{
-display:block;
-max-width:100%;
-height:auto;
+/* CONTENT ABOVE FX */
+
+header,.hero,.block,.preview,.editorial-grid,footer{
 position:relative;
 z-index:3;
 }
 
 /* NAV */
+
 header{padding:20px 40px}
-nav{display:flex;gap:26px;justify-content:flex-end;flex-wrap:wrap}
+
+nav{
+display:flex;
+gap:26px;
+justify-content:flex-end;
+flex-wrap:wrap;
+}
 
 nav a{
 font-family:Space Grotesk;
@@ -106,37 +95,34 @@ text-decoration:none;
 nav a:hover{color:var(--blood)}
 
 /* HERO */
+
 .hero{
 padding:140px 10%;
-background:linear-gradient(rgba(5,5,5,.45),rgba(5,5,5,.25),rgba(5,5,5,0));
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.15),transparent);
 }
 
-/* TITLES — PURE BLOOD */
+/* TITLES */
 
-h1,
-.hero span{
-font-family:"Cormorant Garamond";
+h1{
+font-family:Cormorant Garamond;
 font-weight:700;
-color:#6b0000 !important;
-letter-spacing:.03em;
-text-shadow:none !important;
-filter:none !important;
+color:var(--blood);
+letter-spacing:.04em;
+font-size:clamp(42px,6vw,72px);
+text-shadow:0 0 4px var(--blood-core);
 }
 
+.hero span{
+display:block;
+font-size:clamp(56px,7vw,96px);
+color:var(--blood);
+}
 
 .subtitle{font-family:Space Grotesk;opacity:.6;margin-top:10px}
 .intro{margin-top:30px;max-width:420px;font-style:italic;opacity:.7}
 
-/* GLOBAL H1 FIX — stops pink glow, forces blood red */
+/* HERO PLANETS */
 
-h1{
-color:var(--blood);
-font-weight:700;
-letter-spacing:.04em;
-text-shadow:0 0 4px var(--blood-core);
-}
-
-/* MOON */
 .hero::before{
 content:"";
 position:absolute;
@@ -147,10 +133,8 @@ right:18%;
 top:22%;
 background:var(--moon);
 opacity:.12;
-z-index:1;
 }
 
-/* ORBIT */
 .hero::after{
 content:"";
 position:absolute;
@@ -160,10 +144,10 @@ border:1px solid rgba(255,255,255,.12);
 border-radius:50%;
 right:-180px;
 top:90px;
-z-index:1;
 }
 
 /* BLOCKS */
+
 .block{
 padding:100px 10%;
 border-top:1px solid rgba(255,255,255,.06);
@@ -179,16 +163,20 @@ margin-bottom:20px;
 .block p{max-width:520px;opacity:.7}
 
 /* LINKS */
-.link{
-display:inline-block;
-margin-top:20px;
+
+.link,
+.block a{
 color:var(--blood);
+font-family:Cormorant Garamond;
+font-size:17px;
 text-decoration:none;
 }
 
-.link:hover{text-decoration:underline}
+.link:hover,
+.block a:hover{text-decoration:underline}
 
 /* GRIDS */
+
 .preview{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -203,291 +191,58 @@ padding:80px 7vw;
 display:grid;
 grid-template-columns:repeat(12,1fr);
 gap:22px;
+max-width:1100px;
+margin:0 auto;
 }
 
 .editorial-grid img{
-grid-column:span 3;
+grid-column:span 4;
 border-radius:6px;
 filter:grayscale(100%);
+width:100%;
+height:auto;
 }
 
-.memory{
-grid-column:span 4;
-font-family:Cormorant Garamond;
+/* ABOUT */
+
+.hero-about{padding:90px 10% 40px;max-width:900px}
+.about-text{padding:40px 10% 90px;max-width:900px}
+
+.about-text p{margin-bottom:24px;opacity:.72;line-height:1.85}
+
+.important{
+color:var(--blood);
 font-style:italic;
-font-size:17px;
-opacity:.75;
 }
 
 /* FOOTER */
-footer{padding:80px;text-align:center;font-family:Space Grotesk;opacity:.6}
+
+footer{
+padding:80px;
+text-align:center;
+font-family:Space Grotesk;
+opacity:.6;
+}
 
 /* MOBILE */
-@media(max-width:900px){
 
-body{
-background:
-linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-var(--void);
-}
+@media(max-width:900px){
 
 header{padding:14px}
 nav{justify-content:center}
 
 .hero{padding:90px 7%}
-.hero h1{font-size:42px}
-.hero span{font-size:52px}
 
 .block{padding:70px 7%}
-.block h2{font-size:28px}
 
 .preview{grid-template-columns:1fr 1fr}
 
 .editorial-grid{grid-template-columns:repeat(6,1fr)}
-.editorial-grid img,.memory{grid-column:span 6}
-   
+.editorial-grid img{grid-column:span 6}
 
-/* ===============================
-   HARD IMAGE RESET (ABOUT + ART)
-================================ */
-/* ART PAGE FIX */
-
-.editorial-grid{
-max-width:1200px;
-margin:0 auto;
-}
-
-.editorial-grid img{
-grid-column:span 4 !important;
-max-width:100%;
-height:auto;
-object-fit:contain;
-}
-
-/* mobile scaling */
-
-@media(max-width:900px){
-
-.about img,
-.about-text img{
-max-width:100%;
-margin:24px auto;
-}
-
-.editorial-grid img{
-grid-column:span 6 !important;
-}
-
-}
-
-
-/* remove planet artifacts completely */
-
-.home .block::after{
-display:none !important;
-}
-
-
-/* ===============================
-   ART PAGE IMAGE FIX
-=============================== */
-
-.editorial-grid{
-max-width:1100px;
-margin:0 auto;
-padding:60px 6%;
-}
-
-.editorial-grid img{
-width:100%;
-height:auto;
-object-fit:contain;
-grid-column:span 4;
-border-radius:6px;
-}
-
-/* mobile art */
-
-@media(max-width:900px){
-.editorial-grid img{
-grid-column:span 6;
-}
-}
-
-/* ===============================
-   GLOBAL SAFETY
-=============================== */
-
-img{
-max-width:100%;
-display:block;
-}
-
-/* kill planets forever */
-
-.home .block::after{
-display:none !important;
-}
-
-.hero span{
-mix-blend-mode:normal;
-filter:none;
-text-shadow:0 0 8px rgba(0,0,0,.6);
-}
-/* IMPORTANT PARAGRAPHS */
-
-.important{
-color:var(--blood);
-font-style:italic;
-text-shadow:0 0 6px rgba(139,0,0,.4);
-}
-/* =====================
-   ABOUT PAGE POLISH
-===================== */
-
-/* GLOBAL H1 POWER */
-
-h1{
-color:var(--blood);
-font-weight:700;
-font-size:clamp(42px,6vw,64px);
-letter-spacing:.04em;
-text-shadow:
-0 0 8px rgba(139,0,0,.5),
-0 0 18px rgba(139,0,0,.3);
-}
-
-/* mobile */
-
-@media(max-width:800px){
-.hero-about h1{
-font-size:42px;
-}
-}
-
-.hero-about{
-padding:90px 10% 40px;
-max-width:900px;
-}
-
-.hero-about h1{
-font-family:Cormorant Garamond;
-font-size:48px;
-margin-bottom:20px;
-}
-
-.about-intro{
-font-family:Space Grotesk;
-opacity:.75;
-line-height:1.8;
-max-width:700px;
-}
-
-.about-text{
-padding:40px 10% 90px;
-max-width:900px;
-}
-
-.about-text p{
-margin-bottom:24px;
-opacity:.72;
-line-height:1.85;
-}
-
-.about-text .important{
-color:var(--blood);
-opacity:.9;
-font-style:italic;
-}
-
-footer.legacy{
-margin-top:60px;
-}
-
-/* mobile */
-
-@media(max-width:800px){
+.hero::before,
+.hero::after{display:none}
 
 .hero-about,
-.about-text{
-padding:60px 7%;
-}
-
-.hero-about h1{
-font-size:36px;
-}
-
-.about-text p{
-font-size:15px;
-}
-
-}
-
-/* =========================
-   POETIC LINK STYLE
-========================= */
-
-/* reset all links */
-
-a,
-a:visited{
-color:#fff;
-text-decoration:none;
-}
-
-/* nav stays subtle */
-
-nav a{
-font-family:Inter;
-letter-spacing:.08em;
-text-transform:uppercase;
-font-size:12px;
-color:#aaa;
-}
-
-nav a:hover{
-color:var(--blood);
-}
-
-/* back button */
-
-header.top a{
-font-family:Inter;
-opacity:.75;
-}
-
-header.top a:hover{
-opacity:1;
-}
-
-/* CONTENT LINKS (enter / read / view etc) */
-
-.link,
-.block a{
-color:var(--blood) !important;
-font-family:"Cormorant Garamond";
-font-size:17px;
-letter-spacing:.02em;
-text-transform:none;
-}
-
-/* hover */
-
-.link:hover,
-.block a:hover{
-text-decoration:underline;
-}
-
-/* About page links if any */
-
-.about-text a{
-color:var(--blood);
-font-family:"Cormorant Garamond";
-}
-
-/* soften everything */
-
-a:hover{
-opacity:.85;
+.about-text{padding:60px 7%}
 }
