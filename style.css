@@ -334,12 +334,12 @@ text-shadow:0 0 6px rgba(139,0,0,.4);
    ABOUT PAGE POLISH
 ===================== */
 
-/* ABOUT TITLE POWER */
+/* GLOBAL H1 POWER */
 
-.hero-about h1{
+h1{
 color:var(--blood);
 font-weight:700;
-font-size:64px;
+font-size:clamp(42px,6vw,64px);
 letter-spacing:.04em;
 text-shadow:
 0 0 8px rgba(139,0,0,.5),
