@@ -390,7 +390,11 @@ font-size:15px;
 }
 
 }
-/* GLOBAL LINK RESET */
+/* =========================
+   LINK SYSTEM FIX
+========================= */
+
+/* default links (back button etc) */
 
 a,
 a:visited{
@@ -398,19 +402,50 @@ color:#ffffff;
 text-decoration:none;
 }
 
-a:hover{
-opacity:.75;
-}
-
-/* NAV still slightly muted */
+/* nav stays muted */
 
 nav a{
 color:#aaa;
+letter-spacing:.12em;
+font-family:Space Grotesk;
 }
 
-nav a:visited{
-color:#aaa;
+nav a:hover{
+color:var(--blood);
 }
-.hero-about h1{
-font-weight:700;
+
+/* BACK button */
+
+header.top a{
+font-family:Space Grotesk;
+letter-spacing:.08em;
+opacity:.8;
+}
+
+header.top a:hover{
+opacity:1;
+}
+
+/* CTA LINKS (enter / read / view etc) */
+
+.link,
+.block a,
+.about-text a{
+color:var(--blood) !important;
+font-family:Space Grotesk;
+letter-spacing:.08em;
+text-transform:uppercase;
+font-size:13px;
+}
+
+.link:hover,
+.block a:hover,
+.about-text a:hover{
+text-decoration:underline;
+}
+
+/* small fade */
+
+a:hover{
+opacity:.85;
 }
