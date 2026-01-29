@@ -228,23 +228,6 @@ nav{justify-content:center}
 /* ===============================
    HARD IMAGE RESET (ABOUT + ART)
 ================================ */
-
-/* generic images */
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
-
-/* ABOUT PAGE FIX */
-
-.about img,
-.about-text img{
-max-width:720px;
-margin:40px auto;
-border-radius:6px;
-}
-
 /* ART PAGE FIX */
 
 .editorial-grid{
@@ -287,34 +270,7 @@ pointer-events:none;
 .home .block::after{
 display:none !important;
 }
-/* ===============================
-   ABOUT PAGE IMAGE FIX
-=============================== */
 
-.about-images{
-max-width:900px;
-margin:60px auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px;
-padding:0 6%;
-}
-
-.about-images img{
-width:100%;
-height:auto;
-object-fit:contain;
-border-radius:6px;
-}
-
-/* stack on mobile */
-
-@media(max-width:900px){
-.about-images{
-grid-template-columns:1fr;
-margin:40px auto;
-}
-}
 
 /* ===============================
    ART PAGE IMAGE FIX
