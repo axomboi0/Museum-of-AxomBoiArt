@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@300;400&display=swap');
 
 :root{
---blood:#6b0000;
---blood-core:#240000;
---moon:#9a9a9a;
---soul:#004c3a;
+--blood:#7a0000;
+--blood-core:#2a0000;
+--moon:#8f8f8f;
+--earth:#2a6cff;
 --void:#050505;
 }
 
@@ -17,11 +17,7 @@ font-family:Inter,sans-serif;
 color:#e6e6e6;
 line-height:1.7;
 overflow-x:hidden;
-background:
-linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-var(--void);
-background-size:90px 90px,90px 90px,auto;
+background:var(--void);
 }
 
 /* GRAIN */
@@ -41,23 +37,20 @@ body::before{
 content:"";
 position:fixed;
 inset:0;
-z-index:0;
 pointer-events:none;
+z-index:0;
 
-background-image:
-radial-gradient(#ffffff 2px,transparent 3px),
-radial-gradient(#6b0000 2px,transparent 3px),
-radial-gradient(#999 1.5px,transparent 3px),
+background:
+radial-gradient(circle at 15% 20%, var(--moon) 6px, transparent 8px),
+radial-gradient(circle at 65% 45%, var(--earth) 7px, transparent 9px),
+radial-gradient(circle at 35% 70%, var(--blood) 6px, transparent 8px),
 
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'><circle cx='200' cy='160' r='2' fill='white'/><circle cx='420' cy='260' r='2' fill='white'/><circle cx='700' cy='140' r='2' fill='white'/><circle cx='900' cy='420' r='2' fill='white'/><circle cx='1200' cy='300' r='2' fill='white'/><line x1='200' y1='160' x2='420' y2='260' stroke='%23aaa'/><line x1='420' y1='260' x2='700' y2='140' stroke='%23aaa'/><line x1='700' y1='140' x2='900' y2='420' stroke='%23aaa'/></svg>");
+radial-gradient(circle at 65% 45%, rgba(42,108,255,.25), transparent 120px),
+radial-gradient(circle at 35% 70%, rgba(122,0,0,.35), transparent 110px),
 
-background-size:
-120px 120px,
-200px 200px,
-300px 300px,
-100% 100%;
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'><circle cx='900' cy='420' r='220' stroke='%23ffffff22' stroke-width='1' fill='none'/><circle cx='500' cy='600' r='180' stroke='%237a000033' stroke-width='1' fill='none'/></svg>");
 
-opacity:.8;
+background-size:100% 100%;
 }
 
 /* KEEP CONTENT ABOVE FX */
@@ -115,10 +108,10 @@ filter:none !important;
 /* GLOBAL H1 FIX — stops pink glow, forces blood red */
 
 h1{
-color:var(--blood) !important;
+color:var(--blood);
 font-weight:700;
 letter-spacing:.04em;
-text-shadow:0 0 4px #000 !important;
+text-shadow:0 0 4px var(--blood-core);
 }
 
 /* MOON */
@@ -231,9 +224,11 @@ nav{justify-content:center}
 
 .editorial-grid{grid-template-columns:repeat(6,1fr)}
 .editorial-grid img,.memory{grid-column:span 6}
-
+   
 .hero::after,
-.hero::before{display:none}
+.hero::before{
+opacity:.5;
+transform:scale(.7);
 }
 
 /* ===============================
