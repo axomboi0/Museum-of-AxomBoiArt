@@ -7,6 +7,7 @@
 --void:#030303;
 }
 
+
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -32,39 +33,46 @@ z-index:0;
 
 /* CONSTELLATIONS + STARS */
 
+body{
+font-family:Inter,sans-serif;
+color:#e6e6e6;
+line-height:1.7;
+overflow-x:hidden;
+background:
+linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+#030303;
+background-size:80px 80px,80px 80px,auto;
+}
+
+/* FUN SCRIBBLE + ORBITS + STARS */
+
 body::before{
 content:"";
 position:fixed;
 inset:0;
 pointer-events:none;
 z-index:0;
-opacity:.8;
 
 background-image:
 
-/* stars */
-radial-gradient(#ffffff 1px,transparent 3px),
-radial-gradient(var(--blood) 1px,transparent 3px),
-radial-gradient(#888 1px,transparent 3px),
+/* white stars */
+radial-gradient(#ffffff 1.5px, transparent 3px),
 
-/* sun moon earth */
-radial-gradient(circle at 70% 35%, var(--earth) 6px, transparent 8px),
-radial-gradient(circle at 20% 18%, var(--moon) 7px, transparent 10px),
-radial-gradient(circle at 40% 65%, var(--blood) 6px, transparent 9px),
+/* red stars */
+radial-gradient(#5a0000 1.5px, transparent 3px),
 
-/* halos */
-radial-gradient(circle at 40% 65%, rgba(122,0,0,.35), transparent 140px),
-radial-gradient(circle at 70% 35%, rgba(42,108,255,.25), transparent 160px),
-
-/* scribbles + orbits */
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000'><path d='M40 200 C240 40 420 340 640 160 S960 260 1120 420' stroke='%23ffffff' stroke-width='1.5' fill='none' opacity='0.4'/><path d='M80 600 Q360 300 620 560 T1100 520' stroke='%237a0000' stroke-width='1.5' fill='none' opacity='0.5'/><path d='M200 100 Q600 200 900 120 T1500 180' stroke='%23bbbbbb' stroke-width='1' fill='none' opacity='0.4'/><circle cx='1100' cy='520' r='180' stroke='%237a0000' stroke-width='1.5' fill='none' opacity='0.4'/><circle cx='500' cy='600' r='140' stroke='%23ffffff' stroke-width='1' fill='none' opacity='0.3'/></svg>");
+/* solar orbits */
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'><circle cx='300' cy='300' r='160' stroke='%23333333' stroke-width='2' fill='none'/><circle cx='900' cy='450' r='220' stroke='%23333333' stroke-width='2' fill='none'/><circle cx='1200' cy='200' r='90' stroke='%23333333' stroke-width='2' fill='none'/><path d='M0 200 C400 50 700 350 1100 200 S1600 260 2000 400' stroke='%23555555' stroke-width='2' fill='none'/><path d='M0 650 Q600 400 1200 650' stroke='%235a0000' stroke-width='2' fill='none'/><circle cx='300' cy='300' r='6' fill='%235a0000'/><circle cx='900' cy='450' r='6' fill='%233366ff'/><circle cx='1200' cy='200' r='5' fill='%23aaaaaa'/></svg>");
 
 background-size:
-160px 160px,
-220px 220px,
-300px 300px,
+120px 120px,
+200px 200px,
 100% 100%;
+
+opacity:.7;
 }
+
 
 
 /* KEEP CONTENT ABOVE FX */
@@ -239,11 +247,6 @@ nav{justify-content:center}
 .editorial-grid{grid-template-columns:repeat(6,1fr)}
 .editorial-grid img,.memory{grid-column:span 6}
    
-.hero::after,
-.hero::before{
-opacity:.5;
-transform:scale(.7);
-}
 
 /* ===============================
    HARD IMAGE RESET (ABOUT + ART)
