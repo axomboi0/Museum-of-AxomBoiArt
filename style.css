@@ -390,3 +390,27 @@ font-size:15px;
 }
 
 }
+/* GLOBAL LINK RESET */
+
+a,
+a:visited{
+color:#ffffff;
+text-decoration:none;
+}
+
+a:hover{
+opacity:.75;
+}
+
+/* NAV still slightly muted */
+
+nav a{
+color:#aaa;
+}
+
+nav a:visited{
+color:#aaa;
+}
+.hero-about h1{
+font-weight:700;
+}
