@@ -1,26 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@300;400&family=Archivo+Black&family=IBM+Plex+Mono&display=swap');
 
 /* RESET */
 
 *{margin:0;padding:0;box-sizing:border-box}
 
+:root{
+--blood:#ff0000;
+}
+
 body{
 font-family:Inter,sans-serif;
 color:#e5e5e5;
-background:#060606;
+background:#050505;
 line-height:1.7;
 overflow-x:hidden;
 }
 
-/* PAPER + GRID */
+/* PAPER GRID */
 
 body{
 background:
-radial-gradient(circle at 70% 30%, rgba(0,80,60,.08), transparent 40%),
-linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-#060606;
-background-size:auto,80px 80px,80px 80px,auto;
+radial-gradient(circle at 70% 30%, rgba(0,80,60,.1), transparent 40%),
+linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px),
+#050505;
+background-size:auto,90px 90px,90px 90px,auto;
 }
 
 /* FILM GRAIN */
@@ -30,8 +34,9 @@ content:"";
 position:fixed;
 inset:0;
 background:url("https://grainy-gradients.vercel.app/noise.svg");
-opacity:.05;
+opacity:.06;
 pointer-events:none;
+z-index:9;
 }
 
 /* NAV */
@@ -41,15 +46,16 @@ header{padding:20px 40px}
 nav{display:flex;gap:26px;justify-content:flex-end}
 
 nav a{
-font-family:Space Grotesk;
-letter-spacing:.12em;
-font-size:13px;
+font-family:IBM Plex Mono;
+letter-spacing:.15em;
+font-size:12px;
 text-transform:uppercase;
 color:#aaa;
 text-decoration:none;
+transition:.3s;
 }
 
-nav a:hover{color:#8b0000}
+nav a:hover{color:var(--blood)}
 
 /* HERO */
 
@@ -62,19 +68,27 @@ position:relative;
 font-family:Cormorant Garamond;
 font-size:clamp(48px,8vw,96px);
 line-height:.95;
+position:relative;
 }
+
+/* DO NOT TOUCH AXOMBOIART FONT */
 
 .hero span{
 display:block;
-color:#8b0000;
+color:var(--blood);
 font-size:clamp(56px,7vw,96px);
+text-shadow:0 0 35px rgba(255,0,0,.6);
 }
+
+/* subtitle */
 
 .subtitle{
 font-family:Space Grotesk;
 opacity:.6;
 margin-top:10px;
 }
+
+/* intro */
 
 .intro{
 margin-top:30px;
@@ -83,55 +97,56 @@ font-style:italic;
 opacity:.7;
 }
 
-/* SCRIBBLE */
+/* CHAOTIC SCRIBBLES */
 
 .hero::before{
 content:"";
 position:absolute;
-inset:0;
-background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><path d='M20 200 Q200 100 380 260 T580 300' fill='none' stroke='white' stroke-width='1' opacity='0.06'/></svg>");
-background-repeat:no-repeat;
-background-position:15% 60%;
+inset:-40%;
+background-image:
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='700'><path d='M40 200 C180 40 360 340 540 160 S860 260 820 420' stroke='white' fill='none' opacity='0.05'/><path d='M100 500 Q300 300 520 520 T880 460' stroke='white' fill='none' opacity='0.04'/></svg>");
+background-repeat:repeat;
 pointer-events:none;
 }
 
-/* SOLAR RINGS */
+/* SOLAR SYSTEM */
 
 .hero::after{
 content:"";
 position:absolute;
-width:500px;
-height:500px;
-border:1px solid rgba(255,255,255,.05);
+width:520px;
+height:520px;
+border:1px solid rgba(255,255,255,.06);
 border-radius:50%;
 right:-200px;
 top:60px;
 }
 
-/* BLOOD SUN */
+/* moon */
 
-.hero span::after{
+.hero h1::after{
 content:"";
 position:absolute;
-width:12px;
-height:12px;
-background:#8b0000;
+width:14px;
+height:14px;
+background:var(--blood);
 border-radius:50%;
-margin-left:20px;
-box-shadow:0 0 25px rgba(139,0,0,.8);
+left:105%;
+top:40%;
+box-shadow:0 0 40px rgba(255,0,0,.9);
 }
 
-/* GREEN SOUL */
+/* green soul fog */
 
 .hero h1::before{
 content:"";
 position:absolute;
-width:220px;
-height:220px;
-left:-80px;
-top:80px;
-background:rgba(0,80,60,.25);
-filter:blur(140px);
+width:240px;
+height:240px;
+left:-120px;
+top:100px;
+background:rgba(0,100,80,.3);
+filter:blur(150px);
 border-radius:50%;
 }
 
@@ -144,21 +159,30 @@ position:relative;
 }
 
 .block h2{
-font-family:Playfair Display;
-font-size:38px;
+font-family:Archivo Black;
+font-size:34px;
+letter-spacing:.08em;
 margin-bottom:20px;
 }
 
-.block p{opacity:.7;max-width:500px}
+#poems h2{font-family:Playfair Display;font-style:italic}
+#stories h2{font-family:IBM Plex Mono}
+#music h2{font-family:Archivo Black}
+
+.block p{
+opacity:.7;
+max-width:500px;
+}
 
 .link{
 display:inline-block;
 margin-top:20px;
-color:#8b0000;
+color:var(--blood);
 text-decoration:none;
+font-family:IBM Plex Mono;
 }
 
-/* RED GLASS */
+/* BLOOD GLASS */
 
 .block::after{
 content:"";
@@ -167,9 +191,10 @@ width:60px;
 height:60px;
 right:8%;
 top:40%;
-background:rgba(139,0,0,.35);
+background:var(--blood);
+opacity:.6;
+filter:blur(10px);
 border-radius:8px;
-filter:blur(8px);
 }
 
 /* PREVIEW */
@@ -185,6 +210,12 @@ margin-top:30px;
 width:100%;
 border-radius:6px;
 filter:grayscale(100%);
+transition:.4s;
+}
+
+.preview img:hover{
+filter:none;
+transform:scale(1.02);
 }
 
 /* ABOUT */
@@ -215,7 +246,7 @@ gap:40px;
 
 .about-text p{grid-column:span 6}
 
-/* EDITORIAL GRID */
+/* EDITORIAL */
 
 .editorial-grid{
 padding:80px 7vw;
@@ -224,15 +255,19 @@ grid-template-columns:repeat(12,1fr);
 gap:22px;
 }
 
-.editorial-grid img{grid-column:span 3;border-radius:6px}
-
-/* ACCENT */
+.editorial-grid img{
+grid-column:span 3;
+border-radius:6px;
+filter:grayscale(100%);
+}
 
 .accent{
 grid-column:span 2;
 height:80px;
-background:rgba(139,0,0,.4);
+background:var(--blood);
+opacity:.7;
 border-radius:10px;
+filter:blur(6px);
 }
 
 /* FOOTER */
@@ -259,5 +294,7 @@ font-family:Space Grotesk;
 .about-text{grid-template-columns:1fr}
 
 .about-text p{grid-column:1}
+
+.hero::after{display:none}
 
 }
