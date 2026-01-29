@@ -12,12 +12,14 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 /* BODY */
+
 body{
-font-family:Inter,sans-serif;
-color:#e6e6e6;
-line-height:1.7;
-overflow-x:hidden;
-background:var(-- void);
+  font-family:Inter,sans-serif;
+  color:#e6e6e6;
+  line-height:1.7;
+  overflow-x:hidden;
+  background:#030303;
+  position:relative;
 }
 
 /* GRAIN */
@@ -39,7 +41,7 @@ body::before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:1;
+  z-index:0;
   opacity:.75;
   
 header,
@@ -49,7 +51,7 @@ header,
 .editorial-grid,
 footer{
   position:relative;
-  z-index:3;
+  z-index:2;
 }
 
   background-image:
