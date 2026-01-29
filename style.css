@@ -46,12 +46,10 @@ inset:0;
 pointer-events:none;
 z-index:0;
 opacity:.4;
-background-image:
-radial-gradient(#fff 1px,transparent 3px),
-radial-gradient(#8b0000 1px,transparent 3px),
-radial-gradient(#bbb 1px,transparent 3px),
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'><path d='M40 200 C240 40 420 340 640 160 S960 260 1120 420' stroke='%23ffffff' fill='none' opacity='0.18'/><path d='M80 600 Q360 300 620 560 T1100 520' stroke='%2300ffb0' fill='none' opacity='0.18'/></svg>");
-background-size:160px 160px,220px 220px,300px 300px,100% 100%;
+background:
+linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+var(--void);
 }
 
 /* KEEP CONTENT ABOVE FX */
@@ -200,12 +198,11 @@ footer{padding:80px;text-align:center;font-family:Space Grotesk;opacity:.6}
 
 body{
 background:
-radial-gradient(circle at 72% 18%, rgba(255,210,74,.22), rgba(255,90,0,.18), transparent 55%),
-radial-gradient(circle at 20% 65%, rgba(0,76,58,.25), transparent 45%),
 linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
 var(--void);
 }
+
 
 header{padding:14px}
 nav{justify-content:center}
@@ -324,4 +321,65 @@ text-shadow:0 0 8px rgba(0,0,0,.6);
 color:var(--blood);
 font-style:italic;
 text-shadow:0 0 6px rgba(139,0,0,.4);
+}
+/* =====================
+   ABOUT PAGE POLISH
+===================== */
+
+.hero-about{
+padding:90px 10% 40px;
+max-width:900px;
+}
+
+.hero-about h1{
+font-family:Cormorant Garamond;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.about-intro{
+font-family:Space Grotesk;
+opacity:.75;
+line-height:1.8;
+max-width:700px;
+}
+
+.about-text{
+padding:40px 10% 90px;
+max-width:900px;
+}
+
+.about-text p{
+margin-bottom:24px;
+opacity:.72;
+line-height:1.85;
+}
+
+.about-text .important{
+color:var(--blood);
+opacity:.9;
+font-style:italic;
+}
+
+footer.legacy{
+margin-top:60px;
+}
+
+/* mobile */
+
+@media(max-width:800px){
+
+.hero-about,
+.about-text{
+padding:60px 7%;
+}
+
+.hero-about h1{
+font-size:36px;
+}
+
+.about-text p{
+font-size:15px;
+}
+
 }
