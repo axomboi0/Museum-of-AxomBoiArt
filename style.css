@@ -390,61 +390,70 @@ font-size:15px;
 }
 
 }
+
 /* =========================
-   LINK SYSTEM FIX
+   POETIC LINK STYLE
 ========================= */
 
-/* default links (back button etc) */
+/* reset all links */
 
 a,
 a:visited{
-color:#ffffff;
+color:#fff;
 text-decoration:none;
 }
 
-/* nav stays muted */
+/* nav stays subtle */
 
 nav a{
+font-family:Inter;
+letter-spacing:.08em;
+text-transform:uppercase;
+font-size:12px;
 color:#aaa;
-letter-spacing:.12em;
-font-family:Space Grotesk;
 }
 
 nav a:hover{
 color:var(--blood);
 }
 
-/* BACK button */
+/* back button */
 
 header.top a{
-font-family:Space Grotesk;
-letter-spacing:.08em;
-opacity:.8;
+font-family:Inter;
+opacity:.75;
 }
 
 header.top a:hover{
 opacity:1;
 }
 
-/* CTA LINKS (enter / read / view etc) */
+/* CONTENT LINKS (enter / read / view etc) */
 
 .link,
-.block a,
-.about-text a{
+.block a{
 color:var(--blood) !important;
-font-family:Space Grotesk;
-letter-spacing:.08em;
-text-transform:uppercase;
-font-size:13px;
+font-family:"Cormorant Garamond";
+font-size:17px;
+letter-spacing:.02em;
+text-transform:none;
 }
 
+/* hover */
+
 .link:hover,
-.block a:hover,
-.about-text a:hover{
+.block a:hover{
 text-decoration:underline;
 }
 
-/* small fade */
+/* About page links if any */
+
+.about-text a{
+color:var(--blood);
+font-family:"Cormorant Garamond";
+}
+
+/* soften everything */
 
 a:hover{
 opacity:.85;
