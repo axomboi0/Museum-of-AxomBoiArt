@@ -17,7 +17,7 @@ font-family:Inter,sans-serif;
 color:#e6e6e6;
 line-height:1.7;
 overflow-x:hidden;
-background:var(--void);
+background:var(-- void);
 }
 
 /* GRAIN */
@@ -39,8 +39,18 @@ body::before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:2;
+  z-index:1;
   opacity:.75;
+  
+header,
+.hero,
+.block,
+.preview,
+.editorial-grid,
+footer{
+  position:relative;
+  z-index:3;
+}
 
   background-image:
     radial-gradient(#ffffff 1.5px, transparent 3px),
