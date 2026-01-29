@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@300;400&display=swap');
 
 :root{
---blood:#bb0a1e;
---blood-core:#800000;
---moon:#8f8f8f;
---earth:#2a6cff;
---void:#050505;
+--blood:#5a0000;
+--blood-core:#1a0000;
+--moon:#777;
+--void:#030303;
 }
 
 /* RESET */
@@ -279,12 +278,6 @@ grid-column:span 6 !important;
 
 }
 
-/* stop background FX from touching layout */
-
-body::before,
-body::after{
-pointer-events:none;
-}
 
 /* remove planet artifacts completely */
 
