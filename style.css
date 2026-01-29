@@ -13,11 +13,10 @@ color:#e5e5e5;
 font-family:Inter,sans-serif;
 line-height:1.7;
 background:
-radial-gradient(circle at 70% 30%, rgba(0,120,90,.08), transparent 40%),
 linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
 #070707;
-background-size:auto,80px 80px,80px 80px,auto;
+background-size:80px 80px,80px 80px,auto;
 animation:fadein 1.2s ease;
 }
 
@@ -65,7 +64,7 @@ transition:.3s;
 }
 
 nav a:hover{
-color:#8b0000;
+color:#7a0000;
 letter-spacing:.14em;
 }
 
@@ -88,7 +87,8 @@ line-height:.95;
 .hero h1 span{
 display:block;
 font-size:clamp(56px,7vw,96px);
-color:#8b0000;
+color:#7a0000;
+text-shadow:0 0 20px rgba(122,0,0,.4);
 }
 
 .subtitle{
@@ -118,28 +118,6 @@ pointer-events:none;
 opacity:.4;
 }
 
-/* green soul glow */
-
-.hero::after{
-content:"";
-position:absolute;
-width:220px;
-height:220px;
-left:15%;
-top:40%;
-background:rgba(0,120,90,.25);
-filter:blur(140px);
-border-radius:50%;
-animation:breathe 8s infinite;
-pointer-events:none;
-}
-
-@keyframes breathe{
-0%{opacity:.4}
-50%{opacity:.7}
-100%{opacity:.4}
-}
-
 /* ===============================
  BLOCKS
 =============================== */
@@ -164,7 +142,7 @@ color:#aaa;
 .link{
 display:inline-block;
 margin-top:20px;
-color:#8b0000;
+color:#7a0000;
 text-decoration:none;
 transition:.3s;
 }
@@ -173,15 +151,15 @@ transition:.3s;
 letter-spacing:.05em;
 }
 
-/* red glass */
+/* blood accents */
 
 .block::after{
 content:"";
 position:absolute;
 width:60px;
 height:60px;
-background:rgba(139,0,0,.35);
-backdrop-filter:blur(12px);
+background:#7a0000;
+opacity:.8;
 border-radius:8px;
 right:8%;
 top:40%;
@@ -264,7 +242,7 @@ grid-column:7/span 3;
 margin-top:40px;
 }
 
-/* red boxes */
+/* blood boxes */
 
 .about-images::before{
 content:"";
@@ -273,7 +251,8 @@ width:60px;
 height:60px;
 left:20%;
 top:30%;
-background:rgba(139,0,0,.35);
+background:#7a0000;
+opacity:.8;
 border-radius:8px;
 }
 
@@ -284,7 +263,8 @@ width:40px;
 height:40px;
 right:22%;
 bottom:20%;
-background:rgba(139,0,0,.3);
+background:#7a0000;
+opacity:.7;
 border-radius:6px;
 }
 
@@ -341,8 +321,9 @@ color:#aaa;
 grid-column:span 2;
 height:90px;
 border-radius:12px;
-background:rgba(139,0,0,.35);
-box-shadow:0 0 50px rgba(139,0,0,.35);
+background:#7a0000;
+opacity:.8;
+box-shadow:0 0 40px rgba(122,0,0,.5);
 }
 
 /* ===============================
@@ -375,6 +356,6 @@ opacity:.6;
 
 .editorial-grid img,.memory{grid-column:span 6}
 
-.accent,.hero::after,.block::after{display:none}
+.accent,.block::after{display:none}
 
 }
