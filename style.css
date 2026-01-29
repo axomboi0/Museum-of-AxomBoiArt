@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@300;400&display=swap');
 
 :root{
---blood:#7a0000;
---blood-core:#4a0000;
---soul:rgba(0,140,100,.45);
+--blood:#b00000;
+--blood-core:#520000;
+--sun:#ffd24a;
+--moon:#9a9a9a;
+--soul:#004c3a;
 --void:#050505;
 }
 
@@ -23,11 +25,12 @@ overflow-x:hidden;
 
 body{
 background:
-radial-gradient(circle at 70% 20%, var(--soul), transparent 45%),
+radial-gradient(circle at 72% 18%, var(--sun), transparent 40%),
+radial-gradient(circle at 20% 65%, var(--soul), transparent 45%),
 linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
 var(--void);
-background-size:auto,90px 90px,90px 90px,auto;
+background-size:auto,auto,90px 90px,90px 90px,auto;
 }
 
 /* grain */
@@ -48,8 +51,8 @@ body::before{
 content:"";
 position:fixed;
 inset:0;
-background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'><path d='M40 200 C240 40 420 340 640 160 S960 260 1120 420' stroke='%23cccccc' fill='none' opacity='0.25'/><path d='M80 600 Q360 300 620 560 T1100 520' stroke='%2300aa88' fill='none' opacity='0.2'/><circle cx='200' cy='120' r='80' stroke='white' fill='none' opacity='0.12'/><circle cx='900' cy='500' r='140' stroke='%23b00000' fill='none' opacity='0.18'/></svg>");
-opacity:.4;
+background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='900'><path d='M40 200 C240 40 420 340 640 160 S960 260 1120 420' stroke='%23ffffff' fill='none' opacity='0.18'/><path d='M80 600 Q360 300 620 560 T1100 520' stroke='%2300ffb0' fill='none' opacity='0.22'/><circle cx='200' cy='120' r='90' stroke='%239a9a9a' fill='none' opacity='0.2'/><circle cx='900' cy='500' r='160' stroke='%23b00000' fill='none' opacity='0.25'/></svg>");
+opacity:.5;
 pointer-events:none;
 }
 
@@ -96,7 +99,7 @@ font-size:clamp(56px,7vw,96px);
 color:var(--blood);
 text-shadow:
 0 0 0 var(--blood-core),
-0 0 12px rgba(122,0,0,.6);
+0 0 8px rgba(176,0,0,.8);
 }
 
 .subtitle{
@@ -112,7 +115,22 @@ font-style:italic;
 opacity:.7;
 }
 
-/* solar system */
+/* MOON */
+
+.hero::before{
+content:"";
+position:absolute;
+width:140px;
+height:140px;
+border-radius:50%;
+right:18%;
+top:22%;
+background:var(--moon);
+opacity:.18;
+filter:blur(2px);
+}
+
+/* SOLAR RING */
 
 .hero::after{
 content:"";
@@ -149,8 +167,7 @@ opacity:.7;
 display:inline-block;
 margin-top:20px;
 background:var(--blood-core);
-box-shadow:0 0 25px rgba(122,0,0,.7);
-
+box-shadow:0 0 25px rgba(176,0,0,.7);
 }
 
 /* blood artifacts */
@@ -185,8 +202,7 @@ filter:grayscale(100%);
 
 /* ABOUT / TEXT */
 
-.about-text,
-.memory{
+.about-text{
 font-family:Inter;
 }
 
@@ -207,9 +223,10 @@ filter:grayscale(100%);
 
 .memory{
 grid-column:span 4;
-font-family:Playfair Display;
+font-family:Cormorant Garamond;
 font-style:italic;
-opacity:.7;
+font-size:17px;
+opacity:.75;
 }
 
 /* FOOTER */
@@ -246,6 +263,7 @@ nav{justify-content:center}
 
 .block::after{display:none}
 
-.hero::after{display:none}
+.hero::after,
+.hero::before{display:none}
 
 }
