@@ -35,18 +35,28 @@ pointer-events:none;
 z-index:0;
 }
 
-/* STARS + SCRIBBLES (BACK ONLY) */
+/* CHAOTIC SCRIBBLES + CONSTELLATIONS (VISIBLE ON ALL DEVICES) */
+
 body::before{
 content:"";
 position:fixed;
 inset:0;
 pointer-events:none;
 z-index:0;
-opacity:.4;
-background:
-linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-var(--void);
+opacity:.75;
+
+background-image:
+radial-gradient(#ffffff 1.5px, transparent 3px),
+radial-gradient(#8b0000 1.5px, transparent 3px),
+radial-gradient(#bbbbbb 1px, transparent 2px),
+
+url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000'><path d='M40 200 C300 60 480 380 760 200 S1100 260 1500 460' stroke='%23ffffff' stroke-width='2' fill='none' opacity='0.35'/><path d='M100 700 Q420 360 720 640 T1400 600' stroke='%238b0000' stroke-width='2' fill='none' opacity='0.35'/><path d='M200 100 Q600 200 900 120 T1500 180' stroke='%23bbbbbb' stroke-width='1.5' fill='none' opacity='0.3'/><circle cx='260' cy='140' r='90' stroke='%23bbbbbb' stroke-width='2' fill='none' opacity='0.35'/><circle cx='1100' cy='520' r='160' stroke='%238b0000' stroke-width='2' fill='none' opacity='0.4'/></svg>");
+
+background-size:
+140px 140px,
+220px 220px,
+300px 300px,
+100% 100%;
 }
 
 /* KEEP CONTENT ABOVE FX */
