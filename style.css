@@ -418,11 +418,20 @@ background-size:80px 80px;
 }
 
 /* hero typography */
-
 .hero h1{
-font-family:"Cormorant Garamond";
-letter-spacing:.02em;
-font-weight:700;
+  font-family:"Cormorant Garamond";
+  letter-spacing:.02em;
+  font-weight:700;
+  line-height:.95;
+}
+
+.hero h1 span{
+  display:block;
+  font-size:clamp(56px,7vw,96px); /* smaller AxomBoiArt */
+  color:#c43737; /* softer museum red */
+}
+.hero h1{
+  color:#e6e6e6;
 }
 
 .subtitle{
