@@ -44,16 +44,6 @@ body::before{
   z-index:0;
   opacity:.75;
   
-header,
-.hero,
-.block,
-.preview,
-.editorial-grid,
-footer{
-  position:relative;
-  z-index:2;
-}
-
   background-image:
     radial-gradient(#ffffff 1.5px, transparent 3px),
     radial-gradient(#8b0000 1.5px, transparent 3px),
@@ -68,6 +58,15 @@ footer{
     100% 100%;
 }
 
+header,
+.hero,
+.block,
+.preview,
+.editorial-grid,
+footer{
+  position:relative;
+  z-index:2;
+}
 /* IMAGES ALWAYS ON TOP */
 img{
 display:block;
