@@ -479,3 +479,22 @@ a:hover{
 opacity:.85;
 }
 
+/* =========================
+   DESKTOP ABOUT FIX ONLY
+========================= */
+
+@media (min-width: 901px){
+
+  .hero-about,
+  .about-text{
+    max-width:900px;
+    margin-left:10%;
+    position:relative;
+    z-index:5;
+  }
+
+  .about-text p{
+    max-width:760px;
+  }
+
+}
