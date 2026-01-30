@@ -83,6 +83,56 @@ a fragile archive of a human being
 </p>
 
 </footer>
+  
+<!-- About page music -->
+<audio id="aboutMusic" loop>
+  <source src="apocalypse.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+const music = document.getElementById("aboutMusic");
+
+// start silent
+music.volume = 0;
+
+// try autoplay
+music.play().catch(()=>{});
+
+// unlock on first user interaction (mobile browsers)
+document.addEventListener("click", () => {
+  music.play();
+},{ once:true });
+
+// FADE IN
+function fadeIn(){
+  let v = 0;
+  const fade = setInterval(()=>{
+    if(v < 0.6){
+      v += 0.02;
+      music.volume = v;
+    } else {
+      clearInterval(fade);
+    }
+  },120);
+}
+
+fadeIn();
+
+// FADE OUT when leaving About page
+window.addEventListener("beforeunload", ()=>{
+  let v = music.volume;
+  const fade = setInterval(()=>{
+    if(v > 0){
+      v -= 0.02;
+      music.volume = v;
+    } else {
+      clearInterval(fade);
+      music.pause();
+      music.currentTime = 0;
+    }
+  },80);
+});
+</script>
+  
 </body>
 </html>
