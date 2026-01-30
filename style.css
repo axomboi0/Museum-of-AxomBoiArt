@@ -477,6 +477,8 @@ font-family:"Cormorant Garamond";
 a:hover{
 opacity:.85;
 }
+  
+}
 
 /* =========================
    DESKTOP ABOUT FIX ONLY
@@ -496,7 +498,6 @@ opacity:.85;
     max-width:760px;
   }
 
-}
 }
 
 /* DESKTOP FORCE DARK BACKGROUND + KEEP SCRIBBLES BEHIND */
